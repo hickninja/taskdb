@@ -1,0 +1,14 @@
+* models
+** user
+   * Login login
+   * Name  name
+   * Email email
+
+** task
+   * Title            title
+   * Description      description
+   * Owner            owner
+   * Status           Not Started / In Progress / Blocked / Done / Canceled
+   * Target Milestone milestone
+   * Estimated Time   estimate
+   * Time Spent       spent

@@ -1,7 +1,15 @@
 Taskdb::Application.routes.draw do
-  resources :users
+  resources :milestones
 
+  get "static_pages/home"
+  get "static_pages/help"
+
+  resources :users
   resources :tasks
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

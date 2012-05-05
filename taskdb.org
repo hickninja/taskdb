@@ -1,4 +1,10 @@
 * models
+** user
+   * Login login
+   * Name  name
+   * Email email
+   * has_one lead (user)
+
 ** task
    * Title            title
    * Description      description
@@ -7,3 +13,31 @@
    * Target Milestone milestone
    * Estimated Time   estimate
    * Time Spent       spent
+   * has_one milestone
+   * has_one owner (user)
+
+** milestone
+   * Name name
+   * Date date
+
+** project
+   * Name name
+   * Abbreviation abbrev
+   * has_many milestones
+   * has_many functional_areas
+   * has_many users
+   * has_many leads (users, tho usually one)
+
+** functional_area
+   * Name name
+   * Description description
+   * has_many sub_areas
+   * has_many leads (users, tho usually one)
+
+** sub_area
+   * Name name
+   * Description description
+   * has_many tasks
+
+* todo
+  * on creation, tasks should choose from users for owner

@@ -1,40 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="span8 offset2">
+    <h1><%= @task.title %></h1>
 
-<p>
-  <b>Title:</b>
-  <%= @task.title %>
-</p>
+    <p><%= @task.description %></p>
 
-<p>
-  <b>Description:</b>
-  <%= @task.description %>
-</p>
+    <p>
+      <strong>Owner: </strong>
+      <i class="icon-user"></i> <%= link_to @user.name, @user %>
+    </p>
 
-<p>
-  <b>Owner:</b>
-  <%= @task.owner %>
-</p>
+    <p>
+      <strong>Status: </strong>
+      <%= @task.status %>
+    </p>
 
-<p>
-  <b>Status:</b>
-  <%= @task.status %>
-</p>
+    <p>
+      <strong>Milestone: </strong>
+      <%= @task.milestone %>
+    </p>
 
-<p>
-  <b>Milestone:</b>
-  <%= @task.milestone %>
-</p>
+    <p>
+      <strong>Estimate: </strong>
+      <%= @task.estimate %>
+    </p>
 
-<p>
-  <b>Estimate:</b>
-  <%= @task.estimate %>
-</p>
+    <p>
+      <strong>Spent: </strong>
+      <%= @task.spent %>
+    </p>
+    <%= link_to 'Edit Task', edit_task_path(@task), :class => "btn btn-primary" %>
+  </div>
+</div>
 
-<p>
-  <b>Spent:</b>
-  <%= @task.spent %>
-</p>
-
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

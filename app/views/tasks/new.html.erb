@@ -1,5 +1,12 @@
 <h1>New task</h1>
 
-<%= render 'form' %>
+<% if signed_in? %>
 
-<%= link_to 'Back', tasks_path %>
+  <%= render 'form' %>
+  <%= link_to 'Back', tasks_path %>
+
+<% else %>
+
+  <h2>FOOBAR!</h2>
+
+<% end %>

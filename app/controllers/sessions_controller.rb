@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_to user
     else
-      flash.now[:error] = 'Unknown user!' # Not quite right!
+      flash.now[:error] = 'Unknown user!'
       render 'new'
     end
   end
 
   def destroy
     sign_out
-    redirect_to "/static_pages/home"
+    redirect_to "/"
   end
 end

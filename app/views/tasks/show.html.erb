@@ -6,7 +6,12 @@
 
     <p>
       <strong>Owner: </strong>
-      <i class="icon-user"></i> <%= link_to @user.name, @user %>
+      <i class="icon-user"></i>
+      <% if @user.nil? %>
+        <%= @task.owner %>
+      <% else %>
+        <%= link_to @user.name, @user %>
+      <% end %>
     </p>
 
     <p>

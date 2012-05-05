@@ -40,7 +40,9 @@
    * has_many tasks
 
 * todo
+** soon
   * on creation / edit, tasks should choose from users for owner
+  * when creating tasks, if user is logged in, default task to current_user
+** someday
   * add task history
   * add user activity feeds
-  * when creating tasks, if user is logged in, default task to current_user

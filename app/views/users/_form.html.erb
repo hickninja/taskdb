@@ -1,29 +1,33 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+<div class="row">
+  <div class="span8 offset2">
+    <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
+	<% @user.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
-      <% end %>
+	<% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :login %><br />
-    <%= f.text_field :login %>
+    <div class="field">
+      <%= f.label :login %><br />
+      <%= f.text_field :login %>
+    </div>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
